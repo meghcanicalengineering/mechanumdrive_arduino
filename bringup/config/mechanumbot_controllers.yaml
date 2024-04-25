@@ -5,17 +5,19 @@ controller_manager:
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
 
-    diffbot_base_controller:
-      type: diff_drive_controller/DiffDriveController
+    mechanumbot_base_controller:
+      type: mechanumbot_controller/MechanumbotDriveController
 
-diffbot_base_controller:
+mechanumbot_base_controller:
   ros__parameters:
-    left_wheel_names: ["left_wheel_joint"]
-    right_wheel_names: ["right_wheel_joint"]
+    front_left_wheel_name: ["drivewhr2_l"]
+    front_right_wheel_name: ["drivewh2_r"]
+    back_left_wheel_name: ["drivewhr1_l"]
+    back_right_wheel_name: ["drivewh1_r"]
 
     wheel_separation: 0.10
     #wheels_per_side: 1  # actually 2, but both are controlled by 1 signal
-    wheel_radius: 0.015
+    wheel_radius: 0.03
 
     wheel_separation_multiplier: 1.0
     left_wheel_radius_multiplier: 1.0
@@ -45,6 +47,15 @@ diffbot_base_controller:
     linear.x.max_acceleration: 1.0
     linear.x.max_jerk: 0.0
     linear.x.min_jerk: 0.0
+
+    linear.y.has_velocity_limits: true
+    linear.y.has_acceleration_limits: true
+    linear.y.has_jerk_limits: false
+    linear.y.max_velocity: 1.0
+    linear.y.min_velocity: -1.0
+    linear.y.max_acceleration: 1.0
+    linear.y.max_jerk: 0.0
+    linear.y.min_jerk: 0.0
 
     angular.z.has_velocity_limits: true
     angular.z.has_acceleration_limits: true
