@@ -15,7 +15,8 @@ mechanumbot_base_controller:
     back_left_wheel_name: ["drivewhr1_l"]
     back_right_wheel_name: ["drivewh1_r"]
 
-    wheel_separation: 0.10
+    wheel_seperation_x: 0.265
+    wheel_seperation_y: 0.2357
     #wheels_per_side: 1  # actually 2, but both are controlled by 1 signal
     wheel_radius: 0.03
 
